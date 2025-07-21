@@ -15,17 +15,21 @@
         </a>
     </div>
     </nav>
-    <div class="card" style="width: 70%;margin-top: 10%;margin-left: 15%;margin-right: 15%;margin-bottom: 10px;">
+    <div class="card" style="width: 70%;margin-top: 5%;margin-left: 15%;margin-right: 15%;margin-bottom: 10px;">
     <div class="card-body" style="background-color: rgb(22, 201, 22);">
-        <label for="inputGroupFile02" class="mb-2 fw-bold fs-2">Upload the PDF </label>
-        <input type="file" class="form-control mb-5" id="inputGroupFile02">
-        <input type="radio" class="form-check-input ms-5" name="difficulty" value="low" checked> Low Difficulty&nbsp;
-        <input type="radio" class="form-check-input" name="difficulty" value="medium"> Medium Difficulty&nbsp;
-        <input type="radio" class="form-check-input" name="difficulty" value="high"> High Difficulty <br>
-        <p class="m-3 text-danger fw-bold fs-4">You only have 60 mins to answering</p>
-        <button class="btn btn-dark p-3 m-3 text-white fw-bold fs-3" onclick="loadPaper()">I'm Ready to Face Exam</button>
+        <label for="pictures" class="mb-2 fw-bold fs-2">Upload Images </label>
+        <input type="file" class="form-control mb-5" id="pictures" onchange="toText()" accept=".png,.jpeg,.jpg" multiple>
+        <span id="loading"></span>
+        <input type="radio" class="form-check-input ms-5" name="difficulty" checked onchange="calcTime('low')" id="radio_button_1"> Low Difficulty&nbsp;
+        <input type="radio" class="form-check-input" name="difficulty" onchange="calcTime('medium')" id="radio_button_2"> Medium Difficulty&nbsp;
+        <input type="radio" class="form-check-input" name="difficulty" onchange="calcTime('high')" id="radio_button_3"> High Difficulty <br>
+        <p class="m-3 text-danger fw-bold fs-4" id="timeAllowence"></p>
+        <button class="btn btn-dark p-3 m-3 text-white fw-bold fs-3" onclick="loadPaper()" id="confirm_button" disabled>I'm Ready to Face Exam</button>
     </div>
     </div>
-    <p style="color: rgb(22, 201, 22);position: absolute;bottom: 0px;">&nbsp;Ramdisi Abeywickrama&copy; All Rights Reserved . 2025 v1</p>
+    <p style="color: #16c916;position: absolute;bottom: 0px;">&nbsp;Ramdisi Abeywickrama&copy; All Rights Reserved . 2025 v1</p>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+    <script src="scripts/Question.js"></script>
+    <script src="scripts/uploadFile.js"></script>
 </body>
 </html>

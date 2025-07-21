@@ -1,0 +1,47 @@
+You are an expert quiz evaluator.
+
+Please evaluate the following multiple-choice question and return a structured response.
+
+Question: {{question}}
+
+Options:
+A. {{optionA}}
+B. {{optionB}}
+C. {{optionC}}
+D. {{optionD}}
+
+The student selected: {{userAnswer}}
+
+Instructions:
+1. Identify the correct answer.
+2. Check whether the student's answer is correct.
+3. Assign a mark: 1 if correct, 0 if incorrect.
+4. If the answer is incorrect, provide a useful hint to guide the student.
+5. Always include a clear explanation for the correct answer.
+6. Format your response **strictly** in the following JSON format:
+
+{
+  "correct_answer": "B",
+  "is_user_correct": true,
+  "mark": 1,
+  "hint": "", // leave empty if the answer is correct
+  "explanation": "..."
+}
+
+Only return valid JSON. Do not include any extra commentary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+API structure
+[GET/POST]
+https://v2.convertapi.com/convert/docx/to/pdf?Secret=your-api-secret&File=http://example.com/myfile.docx&StoreFile=true
