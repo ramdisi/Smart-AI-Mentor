@@ -24,5 +24,35 @@ function countdown() {
 }
 
 function submitAnswers() {
-    //code here to upload api
+    let idTemplate = "Q-A-";
+    let noOfQuestion = Number.parseInt(localStorage.getItem("noOfQuestion"));
+    let paper = JSON.parse(localStorage.getItem("paper"));
+    for (let index = 0; index < noOfQuestion; index++) {
+        let id = idTemplate+(index+1);
+        let radioButtons = document.getElementsByName(id);
+        radioButtons.forEach(radioButton => {
+            if(radioButton.checked){
+                paper[index].userSelected = radioButton.value;
+            }
+        });
+    }
+    localStorage.setItem("answeredPaper",JSON.stringify(paper));
+    window.location.replace("waiting.html")
+}
+
+function loadPaper() {
+    let paper = JSON.parse(localStorage.getItem("paper"));
+    let htmlPaper = "";
+    let questionNumber = 1;
+    paper.forEach(json => {
+        let question = json.question;
+        let answers = json.answers;
+        htmlPaper+=`${question}<br>`;
+        answers.forEach(answer => {
+            htmlPaper+=`&nbsp;&nbsp;<input type="radio" name="Q-A-${questionNumber}" value="${answer}"> ${answer}<br>`;
+        });
+        htmlPaper+=`<br>`;
+        questionNumber++;
+    });
+    document.getElementById("paperCanvas").innerHTML = htmlPaper;
 }
