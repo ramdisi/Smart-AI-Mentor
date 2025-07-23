@@ -1,9 +1,9 @@
 
 async function checkPaper() {
     const answeredPaper = JSON.parse(localStorage.getItem("answeredPaper"));
-    const GEMINI_API_KEY = "AIzaSyAG-McRCi-chosYEv-uwduTJoWGHWsdFw8"; // <<< Replace with your actual API key
+    const GEMINI_API_KEY = "AIzaSyAG-McRCi-chosYEv-uwduTJoWGHWsdFw8";
     const API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta";
-    const MODEL_NAME = "gemini-2.5-flash"; // Or "gemini-1.5-pro", "gemini-1.5-flash", etc.
+    const MODEL_NAME = "gemini-2.5-flash";
         const prompt = `
             You are an intelligent quiz grader API. Your task is to accurately assess quiz responses based on the provided JSON data.
 
