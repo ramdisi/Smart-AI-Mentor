@@ -14,7 +14,7 @@ async function checkPaper() {
         * \`userSelected\` (string or null): The user's selected answer.
         * \`isCorrect\` (boolean): \`true\` if the \`userSelected\` answer is correct, \`false\` otherwise.
         * \`mark\` (integer): \`1\` if \`isCorrect\` is \`true\`, \`0\` otherwise.
-        * \`suggestion\` (string, **only if \`isCorrect\` is \`false\`**): A concise and helpful explanation of why the answer was incorrect, or additional relevant information.
+        * \`suggestion\` (string, **only if \`isCorrect\` is \`false\`**): A concise and helpful explanation of why the answer was incorrect which not a very short explanation.try to tell why choosed answer is wrong.
         * \`correctAnswer\` (string): The full, correct answer string as it appears in the \`answers\` array for that question.
 
         The \`totalMarks\` key at the root of the JSON should represent the sum of all \`mark\` values from the \`results\` array.

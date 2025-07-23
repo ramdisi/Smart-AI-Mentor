@@ -13,10 +13,3 @@ The output should be a **JSON object** with a `results` array and a `totalMarks`
 The `totalMarks` key at the root of the JSON should represent the sum of all `mark` values from the `results` array.
 
 Assume the input JSON is well-formed and follows the structure provided.
-
-
-
-
-API structure
-[GET/POST]
-https://v2.convertapi.com/convert/docx/to/pdf?Secret=your-api-secret&File=http://example.com/myfile.docx&StoreFile=true

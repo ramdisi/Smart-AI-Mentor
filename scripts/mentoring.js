@@ -4,7 +4,7 @@ function loadMarkings() {
     let precentage = (checkedPaper.totalMarks/noOfQuestions)*100;
     document.getElementById("rightAnswers").innerText = "Right Answers : "+checkedPaper.totalMarks;
     document.getElementById("wrongAnswers").innerText = "Wrong Answers : "+(noOfQuestions-checkedPaper.totalMarks);
-    document.getElementById("precentage").innerText = "Precentage : "+precentage+"%";
+    document.getElementById("precentage").innerText = "Precentage : "+precentage.toFixed(2)+"%";
     wrongAnswerList = "";
     checkedPaper.results.forEach(questionContent => {
         if (!questionContent.isCorrect) {
