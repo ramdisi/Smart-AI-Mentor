@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Hall</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<style>
+    @font-face {
+        font-family: clockFont;
+        src: url(fonts/clockFont.ttf);
+    }
+</style>
+<body class="bg-black" onload="loadPaper()">
+    <nav class="navbar bg-black">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-size: 5vw;font-family: fantasy;color: rgb(22, 201, 22);">
+        <img src="images/icon.png" alt="Logo" width="15%">
+        Smart AI Mentor
+        </a>
+    </div>
+    </nav>
+    <div class="card m-1 bg-black" style="position: sticky;top: 0px;z-index: 1;">
+    <div class="card-body">
+        <img src="images/clock.png" alt="clock" width="50px" height="50px">
+        <span style="margin-left: 20%; font-size: 30px;font-weight: 800;font-family: clockFont;color:rgb(22, 201, 22);" id="clock">00:00:00</span>
+    </div>
+    </div>
+    <div class="card m-1">
+    <div class="card-body" id="paperCanvas">
+        
+    </div>
+    </div>
+    <button class="btn" style="width: 50%;background-color: #16c916;margin-left: 25%;" onclick="submitAnswers()">Submit Answers</button>
+    <br><hr style="color: darkgray;">
+    <p style="color: rgb(22, 201, 22);">&nbsp;Ramdisi Abeywickrama&copy; All Rights Reserved . 2025 v1</p>
+    <script src="scripts/examhall.js"></script>
+</body>
+</html>
