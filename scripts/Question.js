@@ -3,6 +3,9 @@ class Question {
     constructor(question) {
         this.question = question;
     }
+    setQuestion(question){
+        this.question = question;
+    }
     setAnswer(answer) {
        this.answerArray.push(answer); 
     }

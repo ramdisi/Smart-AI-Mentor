@@ -45,14 +45,18 @@ function loadPaper() {
     let htmlPaper = "";
     let questionNumber = 1;
     paper.forEach(json => {
-        let question = json.question;
+        let question = replaceSpecialCharacters(json.question);
         let answers = json.answers;
         htmlPaper+=`${question}<br>`;
+        htmlPaper+=`<input type="radio" name="Q-A-${questionNumber}" value="not answered" checked hidden>`;
         answers.forEach(answer => {
-            htmlPaper+=`&nbsp;&nbsp;<input type="radio" name="Q-A-${questionNumber}" value="${answer}"> ${answer}<br>`;
+            htmlPaper+=`&nbsp;&nbsp;<input type="radio" name="Q-A-${questionNumber}" value="${replaceSpecialCharacters(answer)}"> ${answer}<br>`;
         });
         htmlPaper+=`<br>`;
         questionNumber++;
     });
     document.getElementById("paperCanvas").innerHTML = htmlPaper;
+}
+function replaceSpecialCharacters(line) {
+    return line.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

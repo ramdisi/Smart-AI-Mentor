@@ -28,11 +28,13 @@ function toJSON(lines){
     let QCount = 0;
     let paper = [];
     lineArray.forEach(line => {
-        if(/^(\w)/gm.test(line)){
+        if(/^\d+\.\s?.+/gm.test(line)){
             paper.push(new Question(line));
             QCount++;
-        }else{
+        }else if(/^\(\w\)/gm.test(line)){
             paper[paper.length-1].setAnswer(line);
+        }else{
+            paper[paper.length-1].setQuestion(paper[paper.length-1].getQuestion()+line);//to concat multiple line questions
         }
     });
     let paperJSON = [];
