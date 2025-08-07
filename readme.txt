@@ -33,4 +33,3 @@ This is a browser-based system that allows users to **upload scanned images** or
 - **Gemini API** (answer checking)
 - **HTML5 / CSS3 / Bootstrap**
 - **Regex** for text structure detection
-- (Optional) `pdf.js` for PDF to image rendering
