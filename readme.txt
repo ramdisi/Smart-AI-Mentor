@@ -12,7 +12,7 @@ This is a browser-based system that allows users to **upload scanned images** or
 
 ## 📸 live
 
-> Coming soon: Insert live link
+> Coming soon: https://ramdisi.github.io/Smart-AI-Mentor/index.html
 
 ---
 
